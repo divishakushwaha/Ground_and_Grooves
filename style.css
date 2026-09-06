@@ -1,0 +1,494 @@
+/* =========================================================
+   GROUNDS & GROOVE — STYLESHEET
+   Dark coffee/forest theme, poster-inspired layout.
+   Color tokens, layout, and component styling.
+   ========================================================= */
+
+:root {
+  /* Base */
+  --bg: #14100B;          /* near-black coffee - page background */
+  --bg-raised: #1D160F;   /* panel background, one step lighter than bg */
+  --ink: #2A1D12;         /* dark text used on light/cream surfaces */
+
+  /* Poster-card colors */
+  --forest: #24382B;      /* deep green card */
+  --maroon: #5C2436;      /* deep berry card */
+  --coffee: #3B2415;      /* coffee brown card */
+
+  --cream: #F3E9D6;       /* ivory - text on dark, light card background */
+  --cream-dim: #C9B99A;   /* muted ivory - secondary text on dark */
+  --gold: #CE9A3E;        /* amber accent - buttons, price, highlights */
+  --line: rgba(243, 233, 214, 0.16);  /* hairline on dark surfaces */
+  --line-light: #E4D6BC;  /* hairline on cream surfaces */
+
+  /* Type */
+  --font-display: 'Anton', sans-serif;     /* bold condensed poster caps */
+  --font-accent: 'Fraunces', serif;         /* italic script-like accent */
+  --font-body: 'Work Sans', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--cream);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--cream);
+}
+
+h2 {
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-size: 1rem;
+}
+
+.section-sub {
+  color: var(--cream-dim);
+  margin-bottom: 32px;
+}
+
+a { color: inherit; text-decoration: none; }
+
+section { padding: 84px 0; }
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 3px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px) rotate(-0.4deg); }
+.btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--ink);
+}
+.btn-primary:hover { background: #E0B15A; }
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--cream);
+  color: var(--cream);
+}
+.btn-ghost:hover { background: var(--cream); color: var(--ink); }
+
+.btn-small {
+  padding: 8px 18px;
+  font-size: 0.75rem;
+  background: var(--cream);
+  color: var(--ink);
+}
+.btn-small:hover { background: var(--gold); }
+
+.btn-full { width: 100%; margin-top: 10px; }
+
+/* ===== HEADER / NAV ===== */
+.site-header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  color: var(--cream);
+}
+.logo span { color: var(--gold); font-family: var(--font-accent); font-style: italic; text-transform: none; }
+
+.site-nav { display: flex; gap: 28px; }
+.site-nav a {
+  color: var(--cream-dim);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+}
+.site-nav a:hover { color: var(--gold); }
+
+/* ===== HERO ===== */
+.hero { padding-top: 90px; padding-bottom: 90px; }
+
+.hero-wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.6rem, 5.4vw, 4rem);
+  line-height: 0.98;
+  margin-bottom: 22px;
+}
+
+.hero-sub {
+  max-width: 44ch;
+  color: var(--cream-dim);
+  margin-bottom: 32px;
+  font-size: 1.02rem;
+}
+
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* ---- Hero illustration: a hand-drawn poster card, slightly tilted ---- */
+.hero-art {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poster-stack { position: relative; width: 260px; height: 340px; }
+
+.poster-back {
+  position: absolute;
+  inset: 0;
+  background: var(--maroon);
+  border-radius: 10px;
+  transform: rotate(6deg) translate(14px, 10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.poster-front {
+  position: absolute;
+  inset: 0;
+  background: var(--forest);
+  border-radius: 10px;
+  border: 3px solid var(--cream);
+  transform: rotate(-3deg);
+  box-shadow: 0 24px 44px rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.poster-illustration {
+  width: 130px;
+  height: auto;
+  color: var(--cream);
+}
+
+.poster-label {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--cream);
+  text-align: center;
+  line-height: 1.15;
+}
+.poster-label span {
+  display: block;
+  font-family: var(--font-display);
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+.poster-sub {
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+}
+
+/* ===== ABOUT ===== */
+.about { background: var(--bg); }
+
+.about-wrap {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.about-copy h2 { font-size: clamp(2.2rem, 3.6vw, 2.9rem); }
+
+.about-copy h3 {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.about-copy .lead {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--cream);
+  margin-bottom: 8px;
+  max-width: 50ch;
+}
+
+.about-copy p { margin-bottom: 16px; max-width: 58ch; color: var(--cream-dim); font-size: 1.05rem; line-height: 1.75; }
+
+.about-details {
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 30px 28px;
+  transform: rotate(1.5deg);
+  box-shadow: 0 18px 30px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.detail-block h3 { color: var(--maroon); font-size: 0.95rem; margin-bottom: 8px; }
+.detail-block p { color: var(--ink); font-size: 0.98rem; }
+
+/* ===== MENU =====
+   Each card is one simple block: color-blocked poster card, framed
+   photo, then title/description/price — the same pattern six times,
+   alternating between three poster colors. */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.menu-item {
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 14px 26px rgba(0,0,0,0.35);
+}
+.menu-item:nth-child(even) { transform: rotate(0.6deg); }
+.menu-item:nth-child(odd) { transform: rotate(-0.6deg); }
+
+.menu-item[data-variant="a"] { background: var(--forest); }
+.menu-item[data-variant="b"] { background: var(--maroon); }
+.menu-item[data-variant="c"] { background: var(--coffee); }
+
+.menu-img-frame { padding: 14px 14px 0; }
+.menu-img {
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+  border: 3px solid var(--cream);
+}
+
+.menu-item-body { padding: 16px 20px 22px; }
+.menu-item-body h3 { color: var(--cream); font-size: 1.05rem; margin-bottom: 6px; letter-spacing: 0.3px; }
+.menu-item-body p { color: var(--cream-dim); font-size: 0.88rem; min-height: 2.6em; }
+
+.menu-item-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+.price { font-weight: 700; color: var(--gold); }
+
+/* ===== ORDER / DELIVERY ===== */
+.order { background: var(--bg-raised); }
+
+.order-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.cart-panel, .delivery-panel {
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 16px 30px rgba(0,0,0,0.3);
+}
+.cart-panel h2, .delivery-panel h2 { color: var(--ink); font-size: 1.5rem; }
+
+.cart-list { list-style: none; margin: 20px 0; }
+
+.cart-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--line-light);
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.cart-empty { color: #7A6C52; font-style: italic; border-bottom: none !important; }
+
+.cart-item-remove {
+  background: none;
+  border: none;
+  color: var(--maroon);
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-left: 10px;
+  text-decoration: underline;
+}
+
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  padding-top: 12px;
+  border-top: 2px solid var(--ink);
+  color: var(--ink);
+}
+
+/* ===== FORMS (shared: delivery + reservation) ===== */
+form label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin: 14px 0 6px;
+  color: var(--ink);
+}
+
+form input, form textarea, form select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line-light);
+  border-radius: 4px;
+  background: #FBF6EB;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+form input:focus, form textarea:focus, form select:focus {
+  outline: none;
+  border-color: var(--maroon);
+}
+
+.form-msg {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  min-height: 1.2em;
+}
+.form-msg.success { color: #2F6B45; }
+.form-msg.error { color: var(--maroon); }
+
+/* ===== RESERVATIONS ===== */
+.reserve { background: var(--bg); }
+.reserve h2, .reserve .section-sub { color: var(--cream); }
+.reserve .section-sub { color: var(--cream-dim); }
+
+.reservation-form {
+  max-width: 700px;
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 34px;
+  box-shadow: 0 16px 30px rgba(0,0,0,0.35);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 24px;
+  margin-bottom: 20px;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  background: var(--bg-raised);
+  color: var(--cream);
+  padding: 44px 0;
+  border-top: 1px solid var(--line);
+}
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-logo { margin-bottom: 6px; }
+.footer-logo span { font-family: var(--font-accent); font-style: italic; color: var(--gold); }
+.copyright { font-size: 0.8rem; color: var(--cream-dim); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 800px) {
+  .hero-wrap, .about-wrap, .order-wrap, .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .menu-grid { grid-template-columns: 1fr 1fr; }
+  .about-details { transform: none; }
+}
+
+@media (max-width: 520px) {
+  .menu-grid { grid-template-columns: 1fr; }
+  .menu-item { transform: none !important; }
+  .site-nav { gap: 16px; }
+  .nav-wrap { flex-direction: column; gap: 12px; }
+  .hero-art { margin-top: 24px; }
+  .reservation-form { padding: 24px; }
+}
