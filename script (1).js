@@ -27,7 +27,7 @@ document.querySelectorAll('.add-btn').forEach(function (button) {
 });
 
 function addToCart(name, price) {
-  // If the item is already in the cart, it increase its quantity
+  // If the item is already in the cart, it increases its quantity
   const existing = cart.find(function (item) { return item.name === name; });
   if (existing) {
     existing.qty += 1;
@@ -68,7 +68,7 @@ function renderCart() {
 
   cartTotalEl.textContent = '₹' + total;
 
-  // Wire up the newly created "remove" buttons
+  // Wires up the newly created "remove" buttons
   document.querySelectorAll('.cart-item-remove').forEach(function (btn) {
     btn.addEventListener('click', function () {
       removeFromCart(btn.dataset.name);
@@ -76,7 +76,7 @@ function renderCart() {
   });
 }
 
-// Handle placing the delivery order
+// Handles placing the delivery order
 deliveryForm.addEventListener('submit', function (e) {
   e.preventDefault();
 
@@ -97,7 +97,7 @@ deliveryForm.addEventListener('submit', function (e) {
     return;
   }
 
-  // "Place" the order: generate a fake order ID and estimated time
+  // "Place" the order: generates a fake order ID and estimated time
   const orderId = 'GG-' + Math.floor(1000 + Math.random() * 9000);
   const estMinutes = 30 + Math.floor(Math.random() * 15); // 30-45 minutes
 
@@ -107,7 +107,7 @@ deliveryForm.addEventListener('submit', function (e) {
     'success'
   );
 
-  // Reset cart and form after a successful order
+  // Resets cart and forms after a successful order
   cart = [];
   renderCart();
   deliveryForm.reset();
@@ -136,7 +136,7 @@ reservationForm.addEventListener('submit', function (e) {
     return;
   }
 
-  // Reservation date must not be in the past
+  // Checks if Reservation date is in the past
   const chosenDate = new Date(date + 'T' + time);
   if (chosenDate < new Date()) {
     showMessage(reservationMsg, 'Please choose a date and time in the future.', 'error');
