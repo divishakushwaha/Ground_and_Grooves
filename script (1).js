@@ -16,7 +16,7 @@ const cartTotalEl = document.getElementById('cart-total');
 const deliveryForm = document.getElementById('delivery-form');
 const deliveryMsg = document.getElementById('delivery-msg');
 
-// Attach a click handler to every "Add" button on the menu
+// Attaching a click handler to every "Add" button on the menu
 document.querySelectorAll('.add-btn').forEach(function (button) {
   button.addEventListener('click', function () {
     const menuItem = button.closest('.menu-item');
@@ -27,7 +27,7 @@ document.querySelectorAll('.add-btn').forEach(function (button) {
 });
 
 function addToCart(name, price) {
-  // If the item is already in the cart, just increase its quantity
+  // If the item is already in the cart, it increase its quantity
   const existing = cart.find(function (item) { return item.name === name; });
   if (existing) {
     existing.qty += 1;
@@ -43,7 +43,7 @@ function removeFromCart(name) {
 }
 
 function renderCart() {
-  // Clear the current list
+  // Clearing the current list
   cartList.innerHTML = '';
 
   if (cart.length === 0) {
