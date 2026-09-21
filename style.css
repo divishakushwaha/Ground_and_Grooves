@@ -1,16 +1,9 @@
-/* =========================================================
-   GROUNDS & GROOVE — STYLESHEET
-   Dark coffee/forest theme, poster-inspired layout.
-   Color tokens, layout, and component styling.
-   ========================================================= */
-
 :root {
-  /* Base */
-  --bg: #14100B;          /* near-black coffee - page background */
+
+  --bg: #14100B;          /* black coffee - page background */
   --bg-raised: #1D160F;   /* panel background, one step lighter than bg */
   --ink: #2A1D12;         /* dark text used on light/cream surfaces */
 
-  /* Poster-card colors */
   --forest: #24382B;      /* deep green card */
   --maroon: #5C2436;      /* deep berry card */
   --coffee: #3B2415;      /* coffee brown card */
@@ -21,7 +14,7 @@
   --line: rgba(243, 233, 214, 0.16);  /* hairline on dark surfaces */
   --line-light: #E4D6BC;  /* hairline on cream surfaces */
 
-  /* Type */
+
   --font-display: 'Anton', sans-serif;     /* bold condensed poster caps */
   --font-accent: 'Fraunces', serif;         /* italic script-like accent */
   --font-body: 'Work Sans', sans-serif;
@@ -72,7 +65,6 @@ a { color: inherit; text-decoration: none; }
 
 section { padding: 84px 0; }
 
-/* ===== BUTTONS ===== */
 .btn {
   display: inline-block;
   padding: 14px 30px;
@@ -112,7 +104,6 @@ section { padding: 84px 0; }
 
 .btn-full { width: 100%; margin-top: 10px; }
 
-/* ===== HEADER / NAV ===== */
 .site-header {
   background: var(--bg);
   border-bottom: 1px solid var(--line);
@@ -147,7 +138,6 @@ section { padding: 84px 0; }
 }
 .site-nav a:hover { color: var(--gold); }
 
-/* ===== HERO ===== */
 .hero { padding-top: 90px; padding-bottom: 90px; }
 
 .hero-wrap {
@@ -180,7 +170,6 @@ section { padding: 84px 0; }
 
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
-/* ---- Hero illustration: a hand-drawn poster card, slightly tilted ---- */
 .hero-art {
   position: relative;
   min-height: 380px;
@@ -248,7 +237,6 @@ section { padding: 84px 0; }
   color: var(--cream-dim);
 }
 
-/* ===== ABOUT ===== */
 .about { background: var(--bg); }
 
 .about-wrap {
@@ -299,10 +287,6 @@ section { padding: 84px 0; }
 .detail-block h3 { color: var(--maroon); font-size: 0.95rem; margin-bottom: 8px; }
 .detail-block p { color: var(--ink); font-size: 0.98rem; }
 
-/* ===== MENU =====
-   Each card is one simple block: color-blocked poster card, framed
-   photo, then title/description/price — the same pattern six times,
-   alternating between three poster colors. */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -345,7 +329,7 @@ section { padding: 84px 0; }
 }
 .price { font-weight: 700; color: var(--gold); }
 
-/* ===== ORDER / DELIVERY ===== */
+
 .order { background: var(--bg-raised); }
 
 .order-wrap {
@@ -398,7 +382,6 @@ section { padding: 84px 0; }
   color: var(--ink);
 }
 
-/* ===== FORMS (shared: delivery + reservation) ===== */
 form label {
   display: block;
   font-size: 0.78rem;
@@ -475,7 +458,7 @@ form input:focus, form textarea:focus, form select:focus {
 .footer-logo span { font-family: var(--font-accent); font-style: italic; color: var(--gold); }
 .copyright { font-size: 0.8rem; color: var(--cream-dim); }
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 800px) {
   .hero-wrap, .about-wrap, .order-wrap, .form-grid {
     grid-template-columns: 1fr;
