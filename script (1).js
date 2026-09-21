@@ -1,13 +1,3 @@
-/* =========================================================
-   GROUNDS & GROOVE — SCRIPT
-   Two independent features:
-   1. Delivery cart (add items from menu, place order)
-   2. Table reservation form (validate + confirm)
-   ========================================================= */
-
-/* ---------- 1. DELIVERY CART ---------- */
-
-// Cart is just an array of objects: { name, price, qty }
 let cart = [];
 
 const cartList = document.getElementById('cart-list');
@@ -16,7 +6,6 @@ const cartTotalEl = document.getElementById('cart-total');
 const deliveryForm = document.getElementById('delivery-form');
 const deliveryMsg = document.getElementById('delivery-msg');
 
-// Attaching a click handler to every "Add" button on the menu
 document.querySelectorAll('.add-btn').forEach(function (button) {
   button.addEventListener('click', function () {
     const menuItem = button.closest('.menu-item');
@@ -27,7 +16,6 @@ document.querySelectorAll('.add-btn').forEach(function (button) {
 });
 
 function addToCart(name, price) {
-  // If the item is already in the cart, it increases its quantity
   const existing = cart.find(function (item) { return item.name === name; });
   if (existing) {
     existing.qty += 1;
@@ -43,7 +31,7 @@ function removeFromCart(name) {
 }
 
 function renderCart() {
-  // Clearing the current list
+
   cartList.innerHTML = '';
 
   if (cart.length === 0) {
@@ -67,16 +55,11 @@ function renderCart() {
   });
 
   cartTotalEl.textContent = '₹' + total;
-
-  // Wires up the newly created "remove" buttons
   document.querySelectorAll('.cart-item-remove').forEach(function (btn) {
     btn.addEventListener('click', function () {
       removeFromCart(btn.dataset.name);
     });
-  });
-}
-
-// Handles placing the delivery order
+  });}
 deliveryForm.addEventListener('submit', function (e) {
   e.preventDefault();
 
@@ -97,9 +80,8 @@ deliveryForm.addEventListener('submit', function (e) {
     return;
   }
 
-  // "Place" the order: generates a fake order ID and estimated time
   const orderId = 'GG-' + Math.floor(1000 + Math.random() * 9000);
-  const estMinutes = 30 + Math.floor(Math.random() * 15); // 30-45 minutes
+  const estMinutes = 30 + Math.floor(Math.random() * 15); 
 
   showMessage(
     deliveryMsg,
@@ -107,13 +89,11 @@ deliveryForm.addEventListener('submit', function (e) {
     'success'
   );
 
-  // Resets cart and forms after a successful order
   cart = [];
   renderCart();
   deliveryForm.reset();
 });
 
-/* ---------- 2. TABLE RESERVATION ---------- */
 
 const reservationForm = document.getElementById('reservation-form');
 const reservationMsg = document.getElementById('reservation-msg');
@@ -136,7 +116,7 @@ reservationForm.addEventListener('submit', function (e) {
     return;
   }
 
-  // Checks if Reservation date is in the past
+
   const chosenDate = new Date(date + 'T' + time);
   if (chosenDate < new Date()) {
     showMessage(reservationMsg, 'Please choose a date and time in the future.', 'error');
@@ -154,9 +134,8 @@ reservationForm.addEventListener('submit', function (e) {
   reservationForm.reset();
 });
 
-/* ---------- SHARED HELPER ---------- */
 
 function showMessage(element, text, type) {
   element.textContent = text;
-  element.className = 'form-msg ' + type; // 'success' or 'error'
+  element.className = 'form-msg ' + type; 
 }
