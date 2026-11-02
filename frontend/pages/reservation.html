@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reserve a table | Grounds &amp; Groves</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/reservation.css">
+</head>
+<body data-page="reservation" data-root="../">
+  <div id="site-header"></div>
+  <main id="main">
+    <section class="page-title"><div class="wrap"><h1>Reserve a table</h1><p>Tell us when you are coming and we will keep a table ready.</p></div></section>
+    <section class="section"><div class="wrap res-grid">
+      <form id="res-form" class="card form" novalidate>
+        <div class="row">
+          <div class="field"><label for="date">Date</label><input id="date" name="date" type="date" required></div>
+          <div class="field"><label for="time">Time</label><input id="time" name="time" type="time" min="08:00" max="22:00" step="900" value="19:00" required></div>
+        </div>
+        <div class="chips" id="time-chips" role="group" aria-label="Popular times"></div>
+        <div class="field"><label for="guests">Number of guests</label>
+          <select id="guests" name="guests"></select></div>
+        <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div class="field"><label for="notes">Special requests (optional)</label><input id="notes" name="notes" placeholder="Birthday, high chair, window seat..."></div>
+        <div id="res-msg" class="alert" hidden role="alert"></div>
+        <button class="btn" type="submit">Confirm reservation</button>
+      </form>
+      <aside class="card">
+        <h3>Good to know</h3>
+        <p>We hold your table for 15 minutes after the booking time.</p>
+        <p>Groups of more than 8 can call us on the number in the footer.</p>
+        <p>Need to cancel? Use the form below with your booking number and phone.</p>
+        <form id="cancel-form" class="form">
+          <div class="field"><label for="c-id">Booking number</label><input id="c-id" inputmode="numeric"></div>
+          <div class="field"><label for="c-phone">Phone number</label><input id="c-phone" type="tel"></div>
+          <div id="cancel-msg" class="alert" hidden role="alert"></div>
+          <button class="btn ghost" type="submit">Cancel booking</button>
+        </form>
+      </aside>
+    </div></section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/api.js"></script>
+  <script src="../js/menu-data.js"></script>
+  <script src="../js/localdb.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/reservation.js"></script>
+</body>
+</html>
