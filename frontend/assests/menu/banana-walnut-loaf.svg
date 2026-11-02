@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img">
+<rect width="400" height="300" fill="#2e2a20"/><circle cx="200" cy="150" r="128" fill="#413a2a"/>
+<ellipse cx="200" cy="242" rx="120" ry="12" fill="#000" opacity=".28"/>
+
+<ellipse cx="200" cy="222" rx="150" ry="16" fill="#e7ebe0"/>
+<path d="M78 196 L78 130 Q78 88 200 88 Q322 88 322 130 L322 196 Q322 212 302 212 L98 212 Q78 212 78 196Z" fill="#c2833a"/>
+<path d="M78 130 Q78 88 200 88 Q322 88 322 130 Q200 108 78 130Z" fill="#8c5320"/><path d="M120 108 Q200 96 280 108" stroke="#c2833a" stroke-width="4" fill="none" stroke-linecap="round"/>
+<g fill="#f2d98a" stroke="#d4b25c" stroke-width="2"><circle cx="150" cy="104" r="17"/><circle cx="200" cy="96" r="17"/><circle cx="250" cy="104" r="17"/></g>
+<g fill="#9a6b3a"><circle cx="150" cy="104" r="3"/><circle cx="200" cy="96" r="3"/><circle cx="250" cy="104" r="3"/></g>
+<g fill="#d3a56c"><path d="M105 150 l14 -8 l10 10 l-8 12 l-14 -2z"/><path d="M270 168 l14 -6 l9 11 l-10 10 l-12 -4z"/><path d="M180 176 l12 -8 l12 8 l-6 12 l-14 0z"/></g></svg>
