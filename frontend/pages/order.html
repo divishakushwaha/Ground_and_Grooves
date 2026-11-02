@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your order | Grounds &amp; Groves</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/order.css">
+</head>
+<body data-page="order" data-root="../">
+  <div id="site-header"></div>
+  <main id="main">
+    <section class="page-title"><div class="wrap"><h1>Your order</h1><p>Delivery or pickup. Pay when it arrives.</p></div></section>
+    <section class="section"><div class="wrap order-grid">
+      <div>
+        <h2>Cart</h2>
+        <div id="cart-box" class="card"><p>Loading...</p></div>
+      </div>
+      <form id="order-form" class="card form" novalidate>
+        <h2>Your details</h2>
+        <fieldset class="type-choice">
+          <legend>How would you like it?</legend>
+          <label><input type="radio" name="type" value="delivery" checked> Home delivery</label>
+          <label><input type="radio" name="type" value="pickup"> Pickup from the cafe</label>
+        </fieldset>
+        <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div class="field" id="address-field"><label for="address">Delivery address</label><textarea id="address" name="address" rows="3" autocomplete="street-address"></textarea></div>
+        <div class="field"><label for="notes">Notes for the kitchen (optional)</label><input id="notes" name="notes"></div>
+        <div id="order-msg" class="alert" hidden role="alert"></div>
+        <button class="btn" type="submit" id="place-btn">Place order</button>
+      </form>
+    </div></section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/api.js"></script>
+  <script src="../js/menu-data.js"></script>
+  <script src="../js/localdb.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/order.js"></script>
+</body>
+</html>
