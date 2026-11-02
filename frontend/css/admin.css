@@ -1,0 +1,20 @@
+/* Staff dashboard. Owner: Member 5 */
+.login { max-width: 420px; }
+.login small { color: var(--muted); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.2rem; }
+.stat b { display: block; font: 700 2rem var(--display); color: var(--crema); line-height: 1.1; }
+.tabbar { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin-bottom: 1rem; }
+.tabbar .chip { font: 500 1rem var(--body); padding: .45rem 1.1rem; }
+.chip { border: 1.5px solid var(--crema); background: transparent; color: var(--crema); border-radius: 999px; cursor: pointer; }
+.chip:hover { background: var(--field); }
+.chip[aria-pressed="true"] { background: var(--crema); color: var(--on-crema); }
+.tabbar .small { padding: .35rem 1rem; font-size: .95rem; }
+.tabbar #refresh { margin-left: auto; }
+.table-box { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+table { border-collapse: collapse; width: 100%; font-size: .96rem; }
+th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: #1d2b22; color: var(--crema); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td select { font: inherit; padding: .3rem .5rem; border-radius: 8px; border: 1.5px solid var(--line); background: var(--field); color: var(--text); }
+.empty-row { padding: 2rem; text-align: center; }

@@ -1,0 +1,15 @@
+/* Order tracking page. Owner: Member 3 */
+.track-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 2.5rem; align-items: start; }
+.steps { list-style: none; margin: 1.2rem 0 1.5rem; padding: 0; display: grid; gap: 0; }
+.steps li { position: relative; padding: 0 0 1.4rem 2.4rem; color: var(--muted); }
+.steps li::before { content: ''; position: absolute; left: .55rem; top: 1.4rem; bottom: -.1rem; width: 2px; background: var(--line); }
+.steps li:last-child::before { display: none; }
+.steps li::after { content: ''; position: absolute; left: 0; top: .2rem; width: 1.15rem; height: 1.15rem; border-radius: 50%; border: 2px solid var(--line); background: var(--bg); }
+.steps li.done { color: var(--text); }
+.steps li.done::after { background: var(--crema); border-color: var(--crema); }
+.steps li.done::before { background: var(--crema); }
+.steps li.now { font-weight: 600; color: var(--crema); }
+.steps li.now::after { background: var(--crema); border-color: var(--crema); box-shadow: 0 0 0 5px rgba(226, 169, 59, .3); }
+.bill { border-top: 1px solid var(--line); padding-top: .8rem; }
+.bill div { display: flex; justify-content: space-between; padding: .1rem 0; }
+@media (max-width: 820px) { .track-grid { grid-template-columns: 1fr; } }
