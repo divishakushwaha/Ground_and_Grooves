@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Grounds &amp; Groves</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/contact.css">
+</head>
+<body data-page="contact" data-root="../">
+  <div id="site-header"></div>
+  <main id="main">
+    <section class="page-title"><div class="wrap"><h1>Contact us</h1><p>Questions, feedback or a private event? Write to us.</p></div></section>
+    <section class="section"><div class="wrap res-grid">
+      <form id="contact-form" class="card form" novalidate>
+        <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea></div>
+        <div id="contact-msg" class="alert" hidden role="alert"></div>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+      <aside class="card">
+        <h3>Visit</h3><p>14 Garden Lane, Sector 7</p>
+        <h3>Hours</h3><p>Every day, 8:00 am to 10:00 pm</p>
+        <h3>Write</h3><p>hello@groundsandgroves.example</p>
+      </aside>
+    </div></section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/api.js"></script>
+  <script src="../js/menu-data.js"></script>
+  <script src="../js/localdb.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/contact.js"></script>
+</body>
+</html>
